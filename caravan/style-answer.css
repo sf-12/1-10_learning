@@ -15,7 +15,7 @@ header, nav, h2, .main-visual, footer {
 }
 
 header {
-  width: 90%; /* 横幅90% */
+  width: 90%; /* 横幅 */
   padding: 15px 0;
   margin: 0 auto;
   text-align: center;
@@ -33,7 +33,8 @@ header {
   right: 22px;
 }
 
-header .heading { /* headerタグ内のheadingクラスにのみ反映される */
+header .heading {
+  /* headerタグ内のheadingクラスにのみ反映される */
   font-size: 32px;
 }
 
@@ -50,7 +51,7 @@ header .heading { /* headerタグ内のheadingクラスにのみ反映される 
 }
 
 .main-visual {
-  width: 100%;  /* 横幅いっぱい */
+  width: 100%; /* 横幅いっぱい */
   height: 300px; /* 高さ300px */
   background-image: url(img/mv.jpg);
   background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
@@ -58,7 +59,7 @@ header .heading { /* headerタグ内のheadingクラスにのみ反映される 
 }
 
 .main-visual-content {
-  width: 40%;  /* 横幅40% */
+  width: 40%; /* 横幅40% */
   height: 300px; /* 親の高さに揃える */
   background-color: rgba(0, 0, 0, 0.5); /* 背景色を半透明の黒にする */
   text-align: center; /* 文字を中央揃えにする */
@@ -75,11 +76,11 @@ header .heading { /* headerタグ内のheadingクラスにのみ反映される 
 }
 
 main {
-  width: 800px; /* 横幅 */
+  width: 800px; /* 横幅800px */
   display: flex; /* Flexboxの利用 */
   justify-content: center; /* 要素の横並び・中央寄せ */
   margin: 0 auto; /* 要素の中央揃え */
-  padding: 70px 0; /* 内側余白 */
+  padding: 70px 0; /* 上下に70px、左右に0pxの内側余白 */
 }
 
 .blog {
@@ -101,8 +102,8 @@ main {
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid #f7f7f7;
-  display: flex; /* Flexboxの適用 */
-  justify-content: flex-start; /* 横位置の指定 */
+  display: flex;
+  justify-content: flex-start;
 }
 
 .blog-image {
@@ -176,8 +177,8 @@ main {
 }
 
 .instagram .sidebar-contents {
-  display: flex; /* Flexboxの適用 */
-  flex-wrap: wrap; /* Flexboxを折り返して表示 */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .instagram-box {
@@ -217,25 +218,29 @@ main {
 }
 
 footer {
-  width: 100%;  /* 横幅いっぱい */
-  height: 120px; /* 高さ120px */
-  text-align: center; /* テキストの左右中央寄せ */
-  line-height: 120px; /* テキストの上下中央寄せ */
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
   background-color: #848282;
 }
 
-.footer-text {
-  color: #fff;
-}
-
 @media screen and (max-width: 425px) {
+  header {
+    width: 100%;
+  }
 
-  .social i {
-    display: none;
+  .nav-list {
+    width: 100%;
   }
 
   .nav-list-item {
-    padding: 3px 0;
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+
+  .social {
+    display: none;
   }
 
   .main-visual-content {
@@ -246,39 +251,43 @@ footer {
     width: 100%;
     display: block;
   }
+
   .blog {
     width: 100%;
+    margin: 0;
   }
+
+  .blog-box {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
   .blog-image {
-    width: 50%;
+    width: 49%;
   }
 
-  .blog-box,
-  .sidebar-contents {
-    padding-left: 3%;
-    padding-right: 3%;
-  }
-
-  .blog-item:last-child {
-    margin-bottom: 0;
-  }
-
-  .pagination {
-    padding-top: 25px;
-    padding-bottom: 40px;
+  .blog-text {
+    width: 49%;
+    padding-top: 5px;
   }
 
   .sidebar {
     width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
   }
 
   .instagram-box {
     width: 48%;
     padding-top: 48%;
-    line-height: 0px;
+
   }
 
-  .category {
-    display: none;
+  .instagram-box:nth-child(odd) {
+    margin-right: 4%;
+  }
+
+  .pagination {
+    margin-bottom: 50px;
   }
 }
